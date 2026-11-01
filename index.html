@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MecAI Predict | Preprototipo</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="brand"><span class="brand-mark">M</span><span>MecAI <b>Predict</b></span></div>
+    <p class="side-label">PLATAFORMA</p>
+    <nav aria-label="Navegación principal">
+      <button class="nav-link active" data-view="inicio"><span>⌂</span> Inicio</button>
+      <button class="nav-link" data-view="monitoreo"><span>◌</span> Monitoreo</button>
+      <button class="nav-link" data-view="mantenimiento"><span>▣</span> Mantenimiento</button>
+    </nav>
+    <div class="side-note"><span class="dot green"></span> Sistema demostrativo<br><small>Datos 100% simulados</small></div>
+  </aside>
+  <main>
+    <header><button id="menuBtn" aria-label="Abrir menú">☰</button><div><p class="eyebrow">PREPROTOTIPO · DATOS SIMULADOS</p><h1 id="pageTitle">Vista general</h1></div><div class="user"><span class="avatar">OP</span><span>Operaciones</span></div></header>
+
+    <section id="inicio" class="view active">
+      <div class="notice"><span>ⓘ</span><div><b>Entorno de demostración</b><br>Las métricas y alertas de esta pantalla son datos ficticios para explorar el concepto. No provienen de sensores reales ni constituyen diagnósticos.</div></div>
+      <div class="hero"><div><p class="eyebrow">OPERACIÓN METALMECÁNICA</p><h2>Anticipa señales, organiza decisiones.</h2><p>Una vista clara del estado simulado de tu maquinaria crítica.</p></div><button class="primary go-monitor">Ver monitoreo <span>→</span></button></div>
+      <div class="stats">
+        <article><span class="stat-icon blue">▦</span><div><p>Equipos monitoreados</p><strong>5</strong><small>en esta demostración</small></div></article>
+        <article><span class="stat-icon orange">△</span><div><p>Alertas por revisar</p><strong>3</strong><small>datos simulados</small></div></article>
+        <article><span class="stat-icon green">✓</span><div><p>Operación estable</p><strong>2</strong><small>equipos simulados</small></div></article>
+        <article><span class="stat-icon purple">◴</span><div><p>Próxima revisión</p><strong>12 d</strong><small>estimación ficticia</small></div></article>
+      </div>
+      <div class="grid-two">
+        <article class="panel"><div class="panel-head"><div><p class="eyebrow">ESTADO DE FLOTA</p><h3>Equipos</h3></div><button class="text-btn go-monitor">Ver todo →</button></div><div id="fleetList" class="fleet-list"></div></article>
+        <article class="panel"><div class="panel-head"><div><p class="eyebrow">REQUIERE ATENCIÓN</p><h3>Alertas recientes</h3></div><button class="text-btn go-maint">Historial →</button></div><div id="alertPreview" class="alert-list"></div></article>
+      </div>
+    </section>
+
+    <section id="monitoreo" class="view">
+      <div class="notice compact"><span>ⓘ</span> Tendencias generadas con datos ficticios; sirven solo como demostración visual del producto.</div>
+      <div class="monitor-top"><div><p class="eyebrow">ACTIVO SELECCIONADO</p><h2 id="machineName">Motor eléctrico · Línea 01</h2><p id="machineMeta">Zona de mecanizado · Datos simulados</p></div><label class="select-label">Seleccionar equipo<select id="machineSelect"></select></label></div>
+      <div class="metrics" id="metrics"></div>
+      <div class="chart-grid">
+        <article class="panel chart-panel"><div class="panel-head"><div><p class="eyebrow">TENDENCIA SIMULADA</p><h3>Vibración</h3></div><span class="unit">mm/s</span></div><canvas id="vibrationChart"></canvas></article>
+        <article class="panel chart-panel"><div class="panel-head"><div><p class="eyebrow">TENDENCIA SIMULADA</p><h3>Temperatura</h3></div><span class="unit">°C</span></div><canvas id="temperatureChart"></canvas></article>
+        <article class="panel chart-panel wide"><div class="panel-head"><div><p class="eyebrow">TENDENCIA SIMULADA</p><h3>Consumo energético</h3></div><span class="unit">kWh</span></div><canvas id="energyChart"></canvas></article>
+      </div>
+      <p class="disclaimer">Este preprototipo no realiza predicciones, no está conectado a maquinaria y no debe utilizarse para decisiones de seguridad, operación o mantenimiento.</p>
+    </section>
+
+    <section id="mantenimiento" class="view">
+      <div class="notice"><span>ⓘ</span><div><b>Recomendaciones de ejemplo</b><br>Las prioridades y acciones siguientes se presentan únicamente con fines demostrativos. Valida cualquier intervención con personal técnico calificado.</div></div>
+      <div class="maintenance-grid"><article class="panel"><div class="panel-head"><div><p class="eyebrow">REGISTRO SIMULADO</p><h3>Historial de alertas</h3></div><span class="badge neutral">5 registros</span></div><div id="historyList" class="history-list"></div></article><article class="panel recommendations"><p class="eyebrow">GUÍA ORIENTATIVA</p><h3>Acciones sugeridas</h3><div id="recommendations"></div></article></div>
+    </section>
+    <footer>© 2026 MecAI Predict · Preprototipo educativo · <b>Datos simulados</b></footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
